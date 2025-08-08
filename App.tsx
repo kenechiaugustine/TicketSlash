@@ -266,17 +266,14 @@ const App = () => {
       filtersApplied = true;
     }
 
-    // **Remove check for no filters - allow searching all if needed**
     if (!filtersApplied && filterStatus === "all" && !startDate && !endDate) {
       Alert.alert("No Filters", "Please select at least one filter criterion (status or date) to narrow down results.");
       return;
     }
 
-    // console.log("before slice: ", criteriaDescription);
     criteriaDescription = criteriaDescription.slice(0, -2);
-    // console.log("after slice: ", criteriaDescription);
     if (!filtersApplied && filterStatus === "all") {
-      criteriaDescription = "Showing all todos"; // More descriptive if no filters applied
+      criteriaDescription = "Showing all todos";
     }
 
     // --- Update State and Modals ---
@@ -469,7 +466,7 @@ const App = () => {
           mode="date"
           is24Hour={true}
           display="default"
-          onChange={onDateChange}
+          // onChange={onDateChange}
         />
       )} */}
     </SafeAreaView>
